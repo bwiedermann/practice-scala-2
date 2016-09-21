@@ -15,5 +15,8 @@ object Rainfall {
    *  Hint: the Scala collections API is your friend
    *  http://docs.scala-lang.org/overviews/collections/overview.html 
    */
-  def rainfall(data: Seq[Double]): Double = throw new NotImplementedError
+  def rainfall(data: Seq[Double]): Double = {
+    val rainfalls = (data takeWhile (_ != -999)) filter (_ >= 0)
+    rainfalls.sum / rainfalls.length
+  }
 }
